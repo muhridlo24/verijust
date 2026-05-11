@@ -1,0 +1,39 @@
+# --- Core Framework ---
+fastapi>=0.109.0
+uvicorn[standard]    # High-performance ASGI server
+pydantic>=2.0        # Data validation
+pydantic-settings    # For managing .env variables cleanly
+
+# --- Database (SQLAlchemy 2.0 + Async) ---
+sqlalchemy>=2.0      # Modern ORM
+alembic              # Database migrations (replaces Django migrations)
+asyncpg              # High-speed Async PostgreSQL driver
+psycopg2-binary      # Sync driver (needed for Celery/Alembic)
+
+# --- Security & Auth (You have to build this manually in FastAPI) ---
+python-jose[cryptography] # For JWT token generation/decoding
+passlib[bcrypt]           # Password hashing
+python-multipart          # REQUIRED for File Uploads (Audio/PDF)
+
+# --- AWS SDK (Bedrock/Nova) ---
+boto3                # Standard AWS SDK
+
+# --- Background Tasks (Celery) ---
+celery>=5.3
+redis                # Broker driver for Celery
+
+# --- Production Deployment ---
+gunicorn             # Process manager for Uvicorn workers
+httpx                # Async HTTP client (for calling other APIs if needed)
+
+# --- Utilities ---
+python-dotenv        # Load environment variables
+email-validator      # Validate email inputs easily
+fastapi-mail
+slowapi
+pgvector
+
+mutagen
+librosa
+numpy
+requests
